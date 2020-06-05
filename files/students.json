@@ -1,0 +1,50 @@
+[
+    {
+        "firstName" : "Tony",
+        "lastName" : "Montana",
+        "email" : "tonymontana@school.id",
+        "ipk" : 3.1,
+        "username" : "tonymontana",
+        "password" : "tonymontana123"
+    },
+    {
+        "firstName" : "Ethan",
+        "lastName" : "Hunt",
+        "email" : "ethanhunt@school.id",
+        "ipk" : 3.4,
+        "username" : "ethanhunt",
+        "password" : "ethanhunt123"
+    },
+    {
+        "firstName" : "John",
+        "lastName" : "Daniels",
+        "email" : "johnD@school.id",
+        "ipk" : 2.5,
+        "username" : "johnD",
+        "password" : "johndaniels123"
+    },
+    {
+        "firstName" : "Billy",
+        "lastName" : "Kid",
+        "email" : "bk123@school.id",
+        "ipk" : 2.1,
+        "username" : "billythekid",
+        "password" : "kidthebilly"
+    },
+    {
+        "firstName" : "Sony",
+        "lastName" : "Sugema",
+        "email" : "sonysugema@college.id",
+        "ipk" : 4.0,
+        "username" : "sonysugema",
+        "password" : "sonysugema123"
+    },
+    {
+        "firstName" : "Jack",
+        "lastName" : "Sparrow",
+        "email" : "jackthepirate@school.id",
+        "ipk" : 1.2,
+        "username" : "sparrowincarribean",
+        "password" : "thebadpirate"
+    }
+]

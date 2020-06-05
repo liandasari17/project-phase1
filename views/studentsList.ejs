@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Student's List</h1><br><br>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>GPA</th>
+            <th>Total Credits</th>
+            <th>Subject</th>
+        </tr>
+        <%for (let i = 0 ; i < data.length ; i++){%>
+        <tr>
+            <th><%= getFullName(data[i].firstName,data[i].lastName) %></th>
+            <th><%= data[i].email%></th>
+            <th><%= data[i].ipk%></th>
+            <th><%= totalCredit(data[i])%></th>
+            <th><a href="/students/<%=data[i].id%>/subjects"> Subjects List </a></th>
+        </tr>
+        <%}%>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <%if (data.length > 0){%>
+    <h1><%= getFullName(data[0].Student.firstName,data[0].Student.lastName)%>'s Subjects List</h1><br>
+
+    <a href="/students">Back to Student's List</a><br><br>
+
+    <a href="/students/<%=data[0].Student.id%>/subject/add">Add Subject</a> <br><br>
+
+    <table border="1">
+        <tr>
+            <th>Subject Name</th>
+            <th>Credit</th>
+            <th>Lecturer</th>
+            <th>Action</th>
+        </tr>
+        <%for (let i = 0 ; i < data.length ; i++){%>
+        <tr>
+            <th><%= data[i].Subject.name%></th>
+            <th><%= data[i].Subject.credits%></th>
+            <th><%= data[i].Subject.lecturer%></th>
+            <th><a href="/students/<%=data[i].Student.id%>/subject/delete/<%=data[i].id%>">Delete</a></th>
+        </tr>
+        <%}%>
+    </table>
+    <%} else {%>
+        <h1>This Student isn't registered in any subject </h1><br><br>
+        <a href="/students">Back to Student's List</a><br><br>
+        <a href="/students/<%=dataStudent[0].id%>/subject/add">Add Subject</a> <br><br>
+    <%}%>
+</body>
+</html>

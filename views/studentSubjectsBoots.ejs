@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <thead>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/students">List Student </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/subjects">List Subject</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/students/<%=profil.id%>/subjects">Profile <span class="sr-only">(current)</span></a>                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </thead>
+    <% if (data.length > 0){ %>
+    <span class="badge badge-info" style="width: 100%">
+        <h2>Name: <%= data[0].Student.fullName() %></h2>
+    </span>
+    <span class="badge badge-info" style="width: 100%">
+        <h2>IPK: <%= data[0].Student.ipk %></h2>
+    </span><br><br>
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Subject Name</th>
+                <th scope="col">Credit</th>
+                <th scope="col">Lecturer</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%for (let i = 0 ; i < data.length ; i++){%>
+            <tr>
+                <th scope="row"><%= data[i].Subject.name%></th>
+                <td><%= data[i].Subject.credits%></td>
+                <td><%= data[i].Subject.lecturer%>></td>
+                <th><a href="/students/<%=data[i].Student.id%>/subject/delete/<%=data[i].id%>">Delete</a></th>
+            </tr>
+            <%}%>
+            <!-- <h2><a href="/students" class="badge badge-warning">Back to Student's List</a></h2> -->
+            <h2><a href="/students/<%=dataStudent[0].id%>/subject/add" class="badge badge-warning">Add Subject</a></h2>
+        </tbody>
+    </table><br><br>
+
+    <h3>Edit Data Form</h3><br><br>
+    <h5><%=msg%></h5>
+
+    <form action="/students/edit/<%=dataStudent[0].id%>" method="POST">
+        <label for="formGroupExampleInput">Email</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" name="email" style="width :50%" value="<%=dataStudent[0].email%>"><br>
+        <label for="formGroupExampleInput">Username</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" name="username" style="width :50%" value="<%=dataStudent[0].username%>"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <%} else {%>
+    <h1>This Student isn't registered in any subject </h1><br><br>
+    <h2><a href="/students/<%=dataStudent[0].id%>/subject/add" class="badge badge-warning">Add Subject</a></h2> <br><br>
+    <h3>Edit Data Form</h3> <br><br>
+    <h5><%=msg%></h5>
+
+    <form action="">
+        <label for="formGroupExampleInput">Email</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" name="email" style="width :50%" value="<%=dataStudent[0].email%>"><br>
+        <label for="formGroupExampleInput">Username</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" name="username" style="width :50%" value="<%=dataStudent[0].username%>"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <% } %>
+</body>
+</html>

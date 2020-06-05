@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "Pendahuluan Mencontek",
+        "credits" : 3,
+        "lecturer" : "Kak Seto"
+    },
+    {
+        "name" : "Pendahuluan Meraut Pensil",
+        "credits" : 4,
+        "lecturer" : "Elon Musk"
+    },
+    {
+        "name" : "Teknik Goyang Itik Lanjutan",
+        "credits" : 3,
+        "lecturer" : "Zaskia Gotik"
+    },
+    {
+        "name" : "Filosofi Kopi",
+        "credits" : 3,
+        "lecturer" : "Marcus Aurelius"
+    },
+    {
+        "name" : "Pendidikan Kewarganegaraan",
+        "credits" : 7,
+        "lecturer" : "Young Lex"
+    },
+    {
+        "name" : "Javascipt Advance",
+        "credits" : 2,
+        "lecturer" : "Lianda"
+    }
+]

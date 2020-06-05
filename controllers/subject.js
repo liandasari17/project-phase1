@@ -9,9 +9,12 @@ class SubjectController {
         Subject.findAll()
             .then(data => {
                 // response.send(data)
-                response.render("subject.ejs", {
-                    data
-                })
+                Student.findOne({where:{username:request.session.userId}})
+                .then (profil => {  response.render("subjectBoots.ejs", {
+                    data,profil
+                })})
+                .catch (err => response.send(err))
+              
             })
             .catch(err => {
                 response.send(err)
@@ -28,7 +31,7 @@ class SubjectController {
                 }
             })
             .then(data => {
-                response.render("subjectShowStudent.ejs", {
+                response.render("subjectShowStudentBoots.ejs", {
                     data
                 })
                 // response.send(data)
